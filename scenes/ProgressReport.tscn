@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://lg0n88rowfg6"]
+[gd_scene load_steps=8 format=3 uid="uid://lg0n88rowfg6"]
 
 [ext_resource type="Script" path="res://scripts/ProgressReport.gd" id="1_83ihh"]
 [ext_resource type="Theme" uid="uid://djgs4bheeqxx0" path="res://themes/DefaultTheme.tres" id="2_lf6ie"]
 [ext_resource type="FontFile" uid="uid://l112wvmrrq0" path="res://assets/fonts/Stardew_Valley.ttf" id="3_svvu0"]
-[ext_resource type="PackedScene" uid="uid://dcklort5ddv3i" path="res://scenes/category_progress_row.tscn" id="4_l8xol"]
 [ext_resource type="Script" path="res://scripts/AddGoalButton.gd" id="5_utwj2"]
 [ext_resource type="Script" path="res://scripts/SaveProgressButton.gd" id="6_50mgs"]
 [ext_resource type="Texture2D" uid="uid://bx6042h3dqq7f" path="res://assets/images/winter.jpg" id="6_c8mkd"]
@@ -39,10 +38,6 @@ theme_override_constants/separation = 25
 layout_mode = 2
 text = "Share progress update"
 label_settings = SubResource("LabelSettings_ek5di")
-
-[node name="CategoryProgressRow" parent="Control/VBoxContainer" instance=ExtResource("4_l8xol")]
-visible = false
-layout_mode = 2
 
 [node name="CategoryProgressRowsContainer" type="VBoxContainer" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 500)

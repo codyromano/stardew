@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://damjiako1mjad"]
+[gd_scene load_steps=6 format=3 uid="uid://damjiako1mjad"]
 
 [ext_resource type="Script" path="res://scripts/EndOfDayRewards.gd" id="1_4yo7t"]
 [ext_resource type="Theme" uid="uid://djgs4bheeqxx0" path="res://themes/DefaultTheme.tres" id="2_cry62"]
 [ext_resource type="FontFile" uid="uid://l112wvmrrq0" path="res://assets/fonts/Stardew_Valley.ttf" id="3_koo61"]
-[ext_resource type="PackedScene" uid="uid://cf60158f3xq0g" path="res://scenes/RewardContainer.tscn" id="4_on52p"]
 [ext_resource type="Texture2D" uid="uid://bx6042h3dqq7f" path="res://assets/images/winter.jpg" id="6_ppkmv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ehhk"]
@@ -37,9 +36,6 @@ text = "End of day rewards"
 label_settings = SubResource("LabelSettings_6ehhk")
 
 [node name="AllRewardsContainer" type="VBoxContainer" parent="Control/VBoxContainer"]
-layout_mode = 2
-
-[node name="RewardContainer" parent="Control/VBoxContainer/AllRewardsContainer" instance=ExtResource("4_on52p")]
 layout_mode = 2
 
 [node name="SeasonableBG" type="Sprite2D" parent="."]
