@@ -6,7 +6,7 @@
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_1grn7"]
 
-[node name="CategoryProgressRow" type="HBoxContainer"]
+[node name="CategoryProgressRow" type="HBoxContainer" groups=["ProgressReportGoals"]]
 custom_minimum_size = Vector2(0, 100)
 script = ExtResource("1_h8ibl")
 

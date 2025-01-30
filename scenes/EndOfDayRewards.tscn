@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://damjiako1mjad"]
+
+[ext_resource type="Script" path="res://scripts/EndOfDayRewards.gd" id="1_4yo7t"]
+[ext_resource type="Theme" uid="uid://djgs4bheeqxx0" path="res://themes/DefaultTheme.tres" id="2_cry62"]
+[ext_resource type="FontFile" uid="uid://l112wvmrrq0" path="res://assets/fonts/Stardew_Valley.ttf" id="3_koo61"]
+[ext_resource type="PackedScene" uid="uid://cf60158f3xq0g" path="res://scenes/RewardContainer.tscn" id="4_on52p"]
+[ext_resource type="Texture2D" uid="uid://bx6042h3dqq7f" path="res://assets/images/winter.jpg" id="6_ppkmv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ehhk"]
+font = ExtResource("3_koo61")
+font_size = 67
+font_color = Color(0, 0, 0, 1)
+
+[node name="EndOfDayRewards_tscn" type="Node2D"]
+script = ExtResource("1_4yo7t")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_cry62")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 195.0
+offset_right = 1035.0
+offset_bottom = 1601.0
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" groups=["Persist"]]
+layout_mode = 2
+text = "End of day rewards"
+label_settings = SubResource("LabelSettings_6ehhk")
+
+[node name="AllRewardsContainer" type="VBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="RewardContainer" parent="Control/VBoxContainer/AllRewardsContainer" instance=ExtResource("4_on52p")]
+layout_mode = 2
+
+[node name="SeasonableBG" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(546, 976)
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("6_ppkmv")

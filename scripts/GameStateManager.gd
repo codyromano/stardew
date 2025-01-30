@@ -16,6 +16,24 @@ func add_goal(name):
 	self._state['goals'].append(name)
 	self.save()
 	
+func get_goals():
+	return self._state['goals']
+	
+func get_latest_progress_update(goal_name):
+	var updates = self._state['progress_updates']
+	for i in range(updates.size() - 1, -1, -1):
+		var progress_update = updates[i]
+		if progress_update.goal_name == goal_name:
+			return progress_update
+
+func add_progress(goal_name, score):
+	self._state['progress_updates'].append({
+		"time": Time.get_unix_time_from_system(),
+		"goal_name": goal_name,
+		"score": score,
+	});
+	self.save()
+	
 func set_state(key, value):
 	self._state[key] = value
 	self.save()
@@ -23,6 +41,7 @@ func set_state(key, value):
 func _get_default_state():
 	return {
 		"goals": [],
+		"progress_updates": [],
 		"season": SeasonManager.get_season_label()
 	}
 
