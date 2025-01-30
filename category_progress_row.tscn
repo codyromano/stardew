@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcklort5ddv3i"]
+
+[ext_resource type="Theme" uid="uid://djgs4bheeqxx0" path="res://DefaultTheme.tres" id="1_gsq0r"]
+[ext_resource type="Script" path="res://category_progress_row.gd" id="1_ml7nj"]
+[ext_resource type="FontFile" uid="uid://l112wvmrrq0" path="res://Stardew_Valley.ttf" id="2_iw8r5"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_1grn7"]
+
+[node name="CategoryProgressRow" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+script = ExtResource("1_ml7nj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="Control"]
+offset_left = 2.0
+offset_top = 69.0
+offset_right = 411.0
+offset_bottom = 85.0
+theme = ExtResource("1_gsq0r")
+theme_override_styles/slider = SubResource("StyleBoxLine_1grn7")
+max_value = 10.0
+value = 5.0
+
+[node name="Label" type="Label" parent="Control"]
+offset_left = -8.0
+offset_top = 3.0
+offset_right = 314.0
+offset_bottom = 53.0
+theme = ExtResource("1_gsq0r")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_iw8r5")
+theme_override_font_sizes/font_size = 50
+text = "Example category"

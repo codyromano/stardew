@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd1ab33m01f6m"]
+
+[ext_resource type="Theme" uid="uid://djgs4bheeqxx0" path="res://DefaultTheme.tres" id="1_5uc1p"]
+[ext_resource type="FontFile" uid="uid://l112wvmrrq0" path="res://Stardew_Valley.ttf" id="2_ap3s3"]
+[ext_resource type="Script" path="res://SetSeasonLabel.gd" id="3_7o2uw"]
+[ext_resource type="Script" path="res://ButtonCreate.gd" id="4_alish"]
+[ext_resource type="Texture2D" uid="uid://bx6042h3dqq7f" path="res://winter.jpg" id="5_ysinw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pvlq7"]
+font = ExtResource("2_ap3s3")
+font_size = 67
+font_color = Color(0, 0, 0, 1)
+
+[node name="ResolutionCreationNode2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1081.0
+offset_bottom = 2260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5uc1p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 195.0
+offset_right = 1035.0
+offset_bottom = 1601.0
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" groups=["Persist"]]
+layout_mode = 2
+text = "Set a Goal for Winter"
+label_settings = SubResource("LabelSettings_pvlq7")
+script = ExtResource("3_7o2uw")
+
+[node name="LineEdit" type="LineEdit" parent="Control/VBoxContainer" groups=["Persist"]]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme = ExtResource("1_5uc1p")
+theme_override_fonts/font = ExtResource("2_ap3s3")
+theme_override_font_sizes/font_size = 60
+placeholder_text = "Travel"
+max_length = 20
+caret_blink = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Button" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_ap3s3")
+theme_override_font_sizes/font_size = 60
+text = "Cancel"
+
+[node name="ButtonCreate" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_ap3s3")
+theme_override_font_sizes/font_size = 60
+text = "Create"
+script = ExtResource("4_alish")
+
+[node name="SeasonableBG" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(546, 976)
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("5_ysinw")
+
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/ButtonCreate" to="Control/VBoxContainer/HBoxContainer/ButtonCreate" method="_on_pressed"]

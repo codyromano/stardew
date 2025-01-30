@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://lg0n88rowfg6"]
+
+[ext_resource type="Script" path="res://ProgressReport.gd" id="1_jnrfn"]
+[ext_resource type="Theme" uid="uid://djgs4bheeqxx0" path="res://DefaultTheme.tres" id="1_t00rh"]
+[ext_resource type="FontFile" uid="uid://l112wvmrrq0" path="res://Stardew_Valley.ttf" id="2_p3at7"]
+[ext_resource type="PackedScene" uid="uid://dcklort5ddv3i" path="res://category_progress_row.tscn" id="3_0hiin"]
+[ext_resource type="Script" path="res://AddGoalButton.gd" id="5_cr6sp"]
+[ext_resource type="Texture2D" uid="uid://bx6042h3dqq7f" path="res://winter.jpg" id="5_koddr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ek5di"]
+font = ExtResource("2_p3at7")
+font_size = 67
+font_color = Color(0, 0, 0, 1)
+
+[node name="ProgressReportNode2D" type="Node2D"]
+script = ExtResource("1_jnrfn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1081.0
+offset_bottom = 2260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t00rh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 195.0
+offset_right = 1035.0
+offset_bottom = 1601.0
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" groups=["Persist"]]
+layout_mode = 2
+text = "Share progress update"
+label_settings = SubResource("LabelSettings_ek5di")
+
+[node name="CategoryProgressRow" parent="Control/VBoxContainer" instance=ExtResource("3_0hiin")]
+visible = false
+layout_mode = 2
+
+[node name="CategoryProgressRowsContainer" type="VBoxContainer" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 2
+theme = ExtResource("1_t00rh")
+theme_override_constants/separation = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/CategoryProgressRowsContainer"]
+layout_mode = 2
+
+[node name="AddGoalButton" type="Button" parent="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_t00rh")
+theme_override_fonts/font = ExtResource("2_p3at7")
+theme_override_font_sizes/font_size = 60
+text = "Add Goal"
+script = ExtResource("5_cr6sp")
+
+[node name="SaveProgressButton" type="Button" parent="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_t00rh")
+theme_override_fonts/font = ExtResource("2_p3at7")
+theme_override_font_sizes/font_size = 60
+text = "Save Progress"
+
+[node name="SeasonableBG" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(546, 976)
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("5_koddr")
+
+[connection signal="pressed" from="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer/AddGoalButton" to="." method="_on_add_goal_button_pressed"]
