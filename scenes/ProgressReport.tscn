@@ -1,19 +1,19 @@
 [gd_scene load_steps=8 format=3 uid="uid://lg0n88rowfg6"]
 
-[ext_resource type="Script" path="res://ProgressReport.gd" id="1_jnrfn"]
-[ext_resource type="Theme" uid="uid://djgs4bheeqxx0" path="res://DefaultTheme.tres" id="1_t00rh"]
-[ext_resource type="FontFile" uid="uid://l112wvmrrq0" path="res://Stardew_Valley.ttf" id="2_p3at7"]
-[ext_resource type="PackedScene" uid="uid://dcklort5ddv3i" path="res://category_progress_row.tscn" id="3_0hiin"]
-[ext_resource type="Script" path="res://AddGoalButton.gd" id="5_cr6sp"]
-[ext_resource type="Texture2D" uid="uid://bx6042h3dqq7f" path="res://winter.jpg" id="5_koddr"]
+[ext_resource type="Script" path="res://scripts/ProgressReport.gd" id="1_83ihh"]
+[ext_resource type="Theme" uid="uid://djgs4bheeqxx0" path="res://themes/DefaultTheme.tres" id="2_lf6ie"]
+[ext_resource type="FontFile" uid="uid://l112wvmrrq0" path="res://assets/fonts/Stardew_Valley.ttf" id="3_svvu0"]
+[ext_resource type="PackedScene" uid="uid://dcklort5ddv3i" path="res://scenes/category_progress_row.tscn" id="4_l8xol"]
+[ext_resource type="Script" path="res://scripts/AddGoalButton.gd" id="5_utwj2"]
+[ext_resource type="Texture2D" uid="uid://bx6042h3dqq7f" path="res://assets/images/winter.jpg" id="6_c8mkd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ek5di"]
-font = ExtResource("2_p3at7")
+font = ExtResource("3_svvu0")
 font_size = 67
 font_color = Color(0, 0, 0, 1)
 
 [node name="ProgressReportNode2D" type="Node2D"]
-script = ExtResource("1_jnrfn")
+script = ExtResource("1_83ihh")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -24,7 +24,7 @@ offset_right = 1081.0
 offset_bottom = 2260.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_t00rh")
+theme = ExtResource("2_lf6ie")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 0
@@ -39,7 +39,7 @@ layout_mode = 2
 text = "Share progress update"
 label_settings = SubResource("LabelSettings_ek5di")
 
-[node name="CategoryProgressRow" parent="Control/VBoxContainer" instance=ExtResource("3_0hiin")]
+[node name="CategoryProgressRow" parent="Control/VBoxContainer" instance=ExtResource("4_l8xol")]
 visible = false
 layout_mode = 2
 
@@ -48,7 +48,7 @@ custom_minimum_size = Vector2(0, 500)
 layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 2
-theme = ExtResource("1_t00rh")
+theme = ExtResource("2_lf6ie")
 theme_override_constants/separation = 50
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/CategoryProgressRowsContainer"]
@@ -56,16 +56,16 @@ layout_mode = 2
 
 [node name="AddGoalButton" type="Button" parent="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_t00rh")
-theme_override_fonts/font = ExtResource("2_p3at7")
+theme = ExtResource("2_lf6ie")
+theme_override_fonts/font = ExtResource("3_svvu0")
 theme_override_font_sizes/font_size = 60
 text = "Add Goal"
-script = ExtResource("5_cr6sp")
+script = ExtResource("5_utwj2")
 
 [node name="SaveProgressButton" type="Button" parent="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_t00rh")
-theme_override_fonts/font = ExtResource("2_p3at7")
+theme = ExtResource("2_lf6ie")
+theme_override_fonts/font = ExtResource("3_svvu0")
 theme_override_font_sizes/font_size = 60
 text = "Save Progress"
 
@@ -73,6 +73,6 @@ text = "Save Progress"
 z_index = -1
 position = Vector2(546, 976)
 scale = Vector2(1.875, 1.875)
-texture = ExtResource("5_koddr")
+texture = ExtResource("6_c8mkd")
 
 [connection signal="pressed" from="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer/AddGoalButton" to="." method="_on_add_goal_button_pressed"]

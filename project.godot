@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="stardew"
-run/main_scene="res://ResolutionCreation.tscn"
+run/main_scene="res://scenes/ResolutionCreation.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-SeasonManager="*res://SeasonManager.gd"
-GameStateManager="*res://GameStateManager.gd"
+SeasonManager="*res://scripts/SeasonManager.gd"
+GameStateManager="*res://scripts/GameStateManager.gd"
 
 [display]
 

@@ -13,4 +13,4 @@ func _process(delta):
 
 func _on_pressed():
 	GameStateManager.add_goal(line_edit.text)
-	get_tree().change_scene_to_file("res://ProgressReport.tscn")
+	get_tree().change_scene_to_file("res://scenes/ProgressReport.tscn")

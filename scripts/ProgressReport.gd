@@ -1,6 +1,6 @@
 extends Node2D
 
-var progress_scene = preload("res://category_progress_row.tscn")  # Load the component
+var progress_scene = preload("res://scenes/category_progress_row.tscn")  # Load the component
 @onready var category_container
 
 # Called when the node enters the scene tree for the first time.
@@ -22,4 +22,4 @@ func _process(delta):
 
 
 func _on_add_goal_button_pressed():
-	get_tree().change_scene_to_file("res://ResolutionCreation.tscn")
+	get_tree().change_scene_to_file("res://scenes/ResolutionCreation.tscn")
