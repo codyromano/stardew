@@ -1,14 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd1ab33m01f6m"]
+[gd_scene load_steps=8 format=3 uid="uid://cd1ab33m01f6m"]
 
 [ext_resource type="Theme" uid="uid://djgs4bheeqxx0" path="res://themes/DefaultTheme.tres" id="1_hje8i"]
 [ext_resource type="FontFile" uid="uid://l112wvmrrq0" path="res://assets/fonts/Stardew_Valley.ttf" id="2_y1l2n"]
 [ext_resource type="Script" path="res://scripts/SetSeasonLabel.gd" id="3_36ogt"]
 [ext_resource type="Script" path="res://scripts/ButtonCreate.gd" id="4_1tknm"]
+[ext_resource type="StyleBox" uid="uid://bnr36dihp1t7a" path="res://themes/new_style_box_flat.tres" id="4_8tyqq"]
 [ext_resource type="Texture2D" uid="uid://bx6042h3dqq7f" path="res://assets/images/winter.jpg" id="5_s23a3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pvlq7"]
 font = ExtResource("2_y1l2n")
-font_size = 67
+font_size = 80
 font_color = Color(0, 0, 0, 1)
 
 [node name="ResolutionCreationNode2D" type="Node2D"]
@@ -30,41 +31,52 @@ offset_left = 48.0
 offset_top = 195.0
 offset_right = 1035.0
 offset_bottom = 1601.0
-theme_override_constants/separation = 25
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VBoxContainer" groups=["Persist"]]
 layout_mode = 2
 text = "Set a Goal for Winter"
 label_settings = SubResource("LabelSettings_pvlq7")
+horizontal_alignment = 1
 script = ExtResource("3_36ogt")
 
 [node name="LineEdit" type="LineEdit" parent="Control/VBoxContainer" groups=["Persist"]]
-custom_minimum_size = Vector2(0, 75)
+custom_minimum_size = Vector2(700, 75)
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("1_hje8i")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_y1l2n")
 theme_override_font_sizes/font_size = 60
-placeholder_text = "Travel"
 max_length = 20
 caret_blink = true
+caret_blink_interval = 0.5
+caret_force_displayed = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 25
+alignment = 1
 
-[node name="Button" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
+[node name="ButtonCancel" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("1_hje8i")
+theme_override_colors/font_color = Color(0.745098, 0.32549, 0.27451, 1)
 theme_override_fonts/font = ExtResource("2_y1l2n")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("4_8tyqq")
 text = "Cancel"
 
 [node name="ButtonCreate" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("1_hje8i")
+theme_override_colors/font_color = Color(0.745098, 0.32549, 0.27451, 1)
 theme_override_fonts/font = ExtResource("2_y1l2n")
 theme_override_font_sizes/font_size = 60
 text = "Create"
