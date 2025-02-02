@@ -1,10 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcklort5ddv3i"]
+[gd_scene load_steps=7 format=3 uid="uid://dcklort5ddv3i"]
 
 [ext_resource type="Script" path="res://scripts/category_progress_row.gd" id="1_h8ibl"]
 [ext_resource type="Theme" uid="uid://djgs4bheeqxx0" path="res://themes/DefaultTheme.tres" id="2_oggq1"]
 [ext_resource type="FontFile" uid="uid://l112wvmrrq0" path="res://assets/fonts/Stardew_Valley.ttf" id="3_j5wyo"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_1grn7"]
+content_margin_top = 0.0
+color = Color(0.333333, 0.176471, 0.168627, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7q3k"]
+bg_color = Color(0.811765, 0.498039, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xc5h"]
+bg_color = Color(0.6, 0.419608, 0.6, 1)
 
 [node name="CategoryProgressRow" type="HBoxContainer" groups=["ProgressReportGoals"]]
 custom_minimum_size = Vector2(0, 100)
@@ -21,6 +30,8 @@ offset_right = 411.0
 offset_bottom = 85.0
 theme = ExtResource("2_oggq1")
 theme_override_styles/slider = SubResource("StyleBoxLine_1grn7")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_t7q3k")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_6xc5h")
 max_value = 10.0
 value = 5.0
 

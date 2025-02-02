@@ -35,20 +35,25 @@ offset_bottom = 1601.0
 theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="Control/VBoxContainer" groups=["Persist"]]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-text = "Share progress update"
+text = "How'd it go today?"
 label_settings = SubResource("LabelSettings_ek5di")
+horizontal_alignment = 1
 
 [node name="CategoryProgressRowsContainer" type="VBoxContainer" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 500)
 layout_direction = 2
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 2
 theme = ExtResource("2_lf6ie")
 theme_override_constants/separation = 50
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/CategoryProgressRowsContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+theme_override_constants/separation = 50
 
 [node name="AddGoalButton" type="Button" parent="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer"]
 layout_mode = 2
@@ -63,7 +68,7 @@ layout_mode = 2
 theme = ExtResource("2_lf6ie")
 theme_override_fonts/font = ExtResource("3_svvu0")
 theme_override_font_sizes/font_size = 60
-text = "Save Progress"
+text = "Go to Sleep"
 script = ExtResource("6_50mgs")
 
 [node name="SeasonableBG" type="Sprite2D" parent="."]
