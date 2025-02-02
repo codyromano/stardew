@@ -2,44 +2,41 @@
 
 [ext_resource type="Script" path="res://scripts/EndOfDayRewards.gd" id="1_4yo7t"]
 [ext_resource type="Theme" uid="uid://djgs4bheeqxx0" path="res://themes/DefaultTheme.tres" id="2_cry62"]
-[ext_resource type="FontFile" uid="uid://l112wvmrrq0" path="res://assets/fonts/Stardew_Valley.ttf" id="3_koo61"]
-[ext_resource type="Texture2D" uid="uid://bx6042h3dqq7f" path="res://assets/images/winter.jpg" id="6_ppkmv"]
+[ext_resource type="Texture2D" uid="uid://k38nf1lcp2oh" path="res://assets/images/title-background.png" id="3_nnpem"]
+[ext_resource type="Texture2D" uid="uid://2rvd1bsd3kw8" path="res://assets/images/night_sky.png" id="4_swkqo"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_6ehhk"]
-font = ExtResource("3_koo61")
-font_size = 67
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7mtru"]
+texture = ExtResource("3_nnpem")
 
 [node name="EndOfDayRewards_tscn" type="Node2D"]
 script = ExtResource("1_4yo7t")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_cry62")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 195.0
-offset_right = 1035.0
-offset_bottom = 1601.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(900, 100)
+offset_right = 900.0
+offset_bottom = 200.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_constants/separation = 25
+alignment = 1
 
-[node name="Label" type="Label" parent="Control/VBoxContainer" groups=["Persist"]]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-text = "End of day rewards"
-label_settings = SubResource("LabelSettings_6ehhk")
+alignment = 1
 
-[node name="AllRewardsContainer" type="VBoxContainer" parent="Control/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(700, 200)
 layout_mode = 2
+theme = ExtResource("2_cry62")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxTexture_7mtru")
+text = "2nd of Winter, Year 2025"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SeasonableBG" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(546, 976)
-scale = Vector2(1.875, 1.875)
-texture = ExtResource("6_ppkmv")
+position = Vector2(90.0625, 625.875)
+scale = Vector2(1.24263, 1.46882)
+texture = ExtResource("4_swkqo")

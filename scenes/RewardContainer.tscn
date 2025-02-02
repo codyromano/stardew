@@ -1,31 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf60158f3xq0g"]
+[gd_scene load_steps=7 format=3 uid="uid://cf60158f3xq0g"]
 
 [ext_resource type="Script" path="res://scripts/RewardContainer.gd" id="1_ehrip"]
 [ext_resource type="Theme" uid="uid://djgs4bheeqxx0" path="res://themes/DefaultTheme.tres" id="1_m0cj1"]
 [ext_resource type="FontFile" uid="uid://l112wvmrrq0" path="res://assets/fonts/Stardew_Valley.ttf" id="2_307hc"]
 [ext_resource type="Script" path="res://scripts/RewardAmountLabel.gd" id="4_5x6tt"]
+[ext_resource type="Texture2D" uid="uid://dqcosscc58gbw" path="res://assets/images/reward-container.png" id="5_oepic"]
 
-[node name="RewardContainer" type="HBoxContainer"]
+[sub_resource type="Theme" id="Theme_s2o6y"]
+
+[node name="RewardContainer" type="TextureRect"]
+custom_minimum_size = Vector2(600, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -380.5
+offset_right = 380.5
+offset_bottom = 149.0
+grow_horizontal = 2
 size_flags_horizontal = 4
-size_flags_vertical = 0
-size_flags_stretch_ratio = 8.18
-theme_override_constants/separation = 50
-alignment = 1
+theme = SubResource("Theme_s2o6y")
+texture = ExtResource("5_oepic")
+stretch_mode = 5
 script = ExtResource("1_ehrip")
 
-[node name="GoalNameLabel" type="Label" parent="."]
-layout_mode = 2
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.5
+offset_top = -37.5
+offset_right = 303.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_m0cj1")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_307hc")
-theme_override_font_sizes/font_size = 60
-text = "Example goal"
 
-[node name="RewardAmountLabel" type="Label" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 61.0
+offset_top = -46.5
+offset_right = 479.0
+offset_bottom = 53.5
+grow_vertical = 2
+
+[node name="GoalNameLabel" type="Label" parent="Control/HBoxContainer"]
+z_index = 1
 layout_mode = 2
+size_flags_horizontal = 2
 theme = ExtResource("1_m0cj1")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_307hc")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
+text = "Example goal"
+horizontal_alignment = 3
+
+[node name="RewardAmountLabel" type="Label" parent="Control/HBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("1_m0cj1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_307hc")
+theme_override_font_sizes/font_size = 50
 text = "500"
+horizontal_alignment = 3
 script = ExtResource("4_5x6tt")

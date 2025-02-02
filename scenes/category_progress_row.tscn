@@ -17,6 +17,10 @@ bg_color = Color(0.6, 0.419608, 0.6, 1)
 
 [node name="CategoryProgressRow" type="HBoxContainer" groups=["ProgressReportGoals"]]
 custom_minimum_size = Vector2(0, 100)
+offset_right = 1078.0
+offset_bottom = 246.0
+theme_override_constants/separation = 100
+alignment = 1
 script = ExtResource("1_h8ibl")
 
 [node name="Control" type="Control" parent="."]
@@ -24,10 +28,10 @@ layout_mode = 2
 
 [node name="HSlider" type="HSlider" parent="Control"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 69.0
-offset_right = 411.0
-offset_bottom = 85.0
+offset_left = -177.0
+offset_top = 111.0
+offset_right = 232.0
+offset_bottom = 178.0
 theme = ExtResource("2_oggq1")
 theme_override_styles/slider = SubResource("StyleBoxLine_1grn7")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_t7q3k")
@@ -37,12 +41,12 @@ value = 5.0
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = -8.0
-offset_top = 3.0
-offset_right = 314.0
-offset_bottom = 53.0
+offset_left = -177.0
+offset_top = 50.0
+offset_right = 176.0
+offset_bottom = 105.0
 theme = ExtResource("2_oggq1")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_j5wyo")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 55
 text = "Example category"

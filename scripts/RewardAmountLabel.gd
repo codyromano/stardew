@@ -1,6 +1,6 @@
 extends Label
 
-const target_duration = 3 # seconds
+const target_duration = 1.5 # seconds
 
 var animation_start_time = null
 var true_value = null

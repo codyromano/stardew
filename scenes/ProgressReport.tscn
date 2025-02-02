@@ -50,12 +50,15 @@ size_flags_vertical = 2
 theme = ExtResource("2_lf6ie")
 theme_override_constants/separation = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/CategoryProgressRowsContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
+offset_left = 204.0
+offset_top = 852.0
+offset_right = 905.0
+offset_bottom = 962.0
 theme_override_constants/separation = 50
 
-[node name="AddGoalButton" type="Button" parent="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer"]
+[node name="AddGoalButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_lf6ie")
 theme_override_fonts/font = ExtResource("3_svvu0")
@@ -63,7 +66,7 @@ theme_override_font_sizes/font_size = 60
 text = "Add Goal"
 script = ExtResource("5_utwj2")
 
-[node name="SaveProgressButton" type="Button" parent="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer"]
+[node name="SaveProgressButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_lf6ie")
 theme_override_fonts/font = ExtResource("3_svvu0")
@@ -77,6 +80,6 @@ position = Vector2(546, 976)
 scale = Vector2(1.875, 1.875)
 texture = ExtResource("6_c8mkd")
 
-[connection signal="pressed" from="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer/AddGoalButton" to="." method="_on_add_goal_button_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer/SaveProgressButton" to="." method="_on_save_progress_button_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer/SaveProgressButton" to="Control/VBoxContainer/CategoryProgressRowsContainer/HBoxContainer/SaveProgressButton" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/AddGoalButton" to="." method="_on_add_goal_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/SaveProgressButton" to="." method="_on_save_progress_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/SaveProgressButton" to="HBoxContainer/SaveProgressButton" method="_on_pressed"]

@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends TextureRect
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,4 +11,4 @@ func _process(delta):
 	pass
 	
 func set_goal_label(goal_name):
-	self.get_node("GoalNameLabel").text = goal_name
+	self.get_node("Control/HBoxContainer/GoalNameLabel").text = goal_name
