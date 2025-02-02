@@ -1,7 +1,7 @@
 extends Node2D
 
 var reward_scene = preload("res://scenes/RewardContainer.tscn")
-const delay_per_goal = 1.5
+const delay_per_goal = 1
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,8 +21,6 @@ func _ready():
 		650
 	);
 	"""
-
-		
 	var vbox = get_node("VBoxContainer")
 	var goals = GameStateManager.get_goals()
 	
@@ -33,7 +31,10 @@ func _ready():
 		
 		if update:
 			var scene = reward_scene.instantiate()
+			var amount = update['score'] * 50
+			
 			scene.set_goal_label(goal)
+			scene.set_reward_amount(amount)
 			vbox.add_child(scene)
 		else:
 			print("No progress made for goal " + goal)

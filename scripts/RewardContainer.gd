@@ -12,3 +12,6 @@ func _process(delta):
 	
 func set_goal_label(goal_name):
 	self.get_node("Control/HBoxContainer/GoalNameLabel").text = goal_name
+
+func set_reward_amount(amount):
+	self.get_node("Control/HBoxContainer/RewardAmountLabel").text = str(amount)

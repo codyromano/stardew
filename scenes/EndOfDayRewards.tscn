@@ -37,6 +37,6 @@ vertical_alignment = 1
 
 [node name="SeasonableBG" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(90.0625, 625.875)
+position = Vector2(406, 611)
 scale = Vector2(1.24263, 1.46882)
 texture = ExtResource("4_swkqo")
